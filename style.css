@@ -1,0 +1,573 @@
+/* =========================================================
+   PERSONAL PORTFOLIO WEBSITE
+   CSS STYLESHEET
+   Student Project - Web Design and Development
+   ========================================================= */
+
+
+/* =========================================================
+   1. BASIC RESET
+   This removes the default browser spacing.
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   2. COLOR VARIABLES
+   These variables help keep the same color palette
+   throughout the website.
+   ========================================================= */
+
+:root {
+    --primary-color: #17324d;
+    --secondary-color: #285779;
+    --accent-color: #e8a317;
+    --light-color: #f4f6f8;
+    --white-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #dddddd;
+}
+
+
+/* =========================================================
+   3. GENERAL BODY STYLING
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+
+/* =========================================================
+   4. HEADER
+   ========================================================= */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+header > p {
+    font-size: 1rem;
+    color: #dce8f1;
+}
+
+
+/* =========================================================
+   5. NAVIGATION
+   Flexbox is used for the navigation menu.
+   ========================================================= */
+
+nav {
+    margin-top: 25px;
+}
+
+nav ul {
+    list-style: none;
+
+    /* Using Flexbox for navigation */
+    display: flex;
+
+    /* Centers navigation links */
+    justify-content: center;
+
+    /* Space between navigation items */
+    gap: 30px;
+
+    /* Allows links to move to another line on small screens */
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+
+    /* Smooth hover effect */
+    transition: 0.3s;
+}
+
+
+/* Navigation hover effect */
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+
+/* =========================================================
+   6. MAIN CONTENT
+   ========================================================= */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+/* Every section gets a white background */
+section {
+    background-color: var(--white-color);
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 12px;
+
+    /* Small shadow makes the sections easier to see */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Section headings */
+section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+
+    /* Small bottom border */
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+}
+
+
+/* =========================================================
+   7. HOME SECTION
+   Flexbox is used to create two columns.
+   ========================================================= */
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.home-text {
+    flex: 1;
+}
+
+.home-image {
+    flex: 0 0 280px;
+}
+
+.home-image img {
+    width: 100%;
+    border-radius: 50%;
+    border: 6px solid var(--secondary-color);
+}
+
+
+/* Small heading on home section */
+.small-heading {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+/* Main home heading */
+.home-text h2 {
+    font-size: 2.5rem;
+    border: none;
+    margin-bottom: 15px;
+}
+
+
+/* Home button */
+.main-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 12px 22px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+/* Home button hover */
+.main-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   8. ABOUT SECTION
+   Flexbox is used for the About section.
+   ========================================================= */
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.about-image {
+    flex: 0 0 220px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   9. SKILLS SECTION
+   CSS Grid is used for the skill cards.
+   ========================================================= */
+
+.skills-container {
+
+    /* Creating a responsive grid */
+    display: grid;
+
+    /* Three columns on larger screens */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #f8fafc;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    /* Smooth hover animation */
+    transition: 0.3s;
+}
+
+.skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+
+/* Skill card hover effect */
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   10. PROJECT SECTION
+   CSS Grid is used for project cards.
+   ========================================================= */
+
+.projects-container {
+
+    /* Using CSS Grid */
+    display: grid;
+
+    /* Three project cards in one row */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Project card */
+.project-card {
+    position: relative;
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+/* Project card hover */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Project number */
+.project-number {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* Project heading */
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+
+/* Technology text */
+.project-tech {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+
+/* Project link */
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Project link hover */
+.project-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   11. EDUCATION SECTION
+   ========================================================= */
+
+.education-card {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.education-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   12. CONTACT FORM
+   ========================================================= */
+
+form {
+    max-width: 700px;
+}
+
+
+/* Each form group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+/* Form labels */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+
+/* Text fields */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+
+    outline: none;
+}
+
+
+/* Input focus effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 4px rgba(40, 87, 121, 0.3);
+}
+
+
+/* Message box */
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+/* Submit button */
+button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 12px 25px;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Button hover effect */
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 25px 20px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =========================================================
+   14. RESPONSIVE DESIGN
+   This media query is used for tablets and mobile phones.
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Reduce main page spacing */
+    main {
+        padding: 20px 15px;
+    }
+
+    /* Reduce section spacing */
+    section {
+        padding: 25px 20px;
+    }
+
+
+    /* Navigation becomes vertical on small screens */
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+
+    /* Home section becomes one column */
+    .home-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+
+    /* Smaller profile image on mobile */
+    .home-image {
+        flex: 0 0 auto;
+        width: 200px;
+    }
+
+
+    /* About section becomes one column */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    /* Smaller about image */
+    .about-image {
+        width: 200px;
+        flex: 0 0 auto;
+    }
+
+
+    /* Skills change to one column */
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Projects change to one column */
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Smaller home heading */
+    .home-text h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* =========================================================
+   15. EXTRA SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    .home-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .main-button {
+        width: 100%;
+        text-align: center;
+    }
+}
